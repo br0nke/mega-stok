@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+    <h1>{% trans "dashboard"|capfirst %}</h1>
+    <p>{% trans "users"|capfirst %}: {{ user_count }}</p>
+    <p>{% trans "projects"|capfirst %}: {{ projects_count }}</p>
+    <p>{% trans "tasks"|capfirst %}: {{ tasks_count }}</p>
+{% endblock content %}
