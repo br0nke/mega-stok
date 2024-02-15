@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-15 08:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+#: tasks/admin.py:24
+msgid "total tasks"
+msgstr "išviso užduočių"
+
+#: tasks/admin.py:28
+msgid "undone tasks"
+msgstr "nebaigtos užduotys"
+
+#: tasks/admin.py:32 tasks/admin.py:64
+msgid "recent tasks"
+msgstr "naujausios užduotys"
+
+#: tasks/admin.py:42
+msgid "general"
+msgstr "pagrindinis"
+
+#: tasks/admin.py:48
+msgid "ownership"
+msgstr "savinikas"
+
+#: tasks/admin.py:53
+msgid "temporal tracking"
+msgstr "laikinas sekimas"
+
+#: tasks/apps.py:10 tasks/models.py:55 tasks/templates/base.html:14
+msgid "tasks"
+msgstr "užduotys"
+
+#: tasks/models.py:10 tasks/models.py:31
+msgid "name"
+msgstr "pavadinimas"
+
+#: tasks/models.py:14 tasks/models.py:42
+msgid "owner"
+msgstr "savinikas"
+
+#: tasks/models.py:19 tasks/models.py:36
+msgid "project"
+msgstr "projektas"
+
+#: tasks/models.py:20
+msgid "projects"
+msgstr "projektai"
+
+#: tasks/models.py:32
+msgid "description"
+msgstr "aprašymas"
+
+#: tasks/models.py:45
+msgid "created at"
+msgstr "sukurtas"
+
+#: tasks/models.py:46
+msgid "updated at"
+msgstr "pakeistas"
+
+#: tasks/models.py:47
+msgid "is done"
+msgstr "atliktas"
+
+#: tasks/models.py:48
+msgid "deadline"
+msgstr "paskutine diena"
+
+#: tasks/models.py:54
+msgid "task"
+msgstr "užduotys"
+
+#: tasks/templates/base.html:13
+msgid "dashboard"
+msgstr "Veiksmų lenta"
+
+#: tasks/templates/base.html:26
+msgid "community on discord"
+msgstr "discordo bendruomenė"
