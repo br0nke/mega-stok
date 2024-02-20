@@ -18,9 +18,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from stock_listings import views
 
 urlpatterns = [
-    path('', include('tasks.urls')),    
+    path('', include('tasks.urls')),
+    path('listings/create/', views.listing_create, name='listing_create'),
+    path('listings/', include('stock_listings.urls')),
+    path('listings/<int:pk>/', views.listing_detail, name='listing_detail'),
+    path('user_profile/', include('user_profile.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),   
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
 ]

@@ -2,7 +2,7 @@ from django.apps import AppConfig
 from django.utils.translation import gettext_lazy as _
 
 
-class TasksConfig(AppConfig):
+class UserProfileConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tasks'
-    verbose_name = _('tasks')
+    name = 'user_profile'
+    verbose_name = _('user profile')

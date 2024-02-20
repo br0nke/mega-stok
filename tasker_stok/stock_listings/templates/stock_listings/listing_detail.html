@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{{ object }} {% trans "at" %} {{ block.super }}{% endblock title %}
+{% block content %}
+    <h1>{{ listing.title }}</h1>
+    <p>Seller: {{ listing.user }} Contact: {{ listing.phone }}</p>
+    <p>Description: {{ listing.description }}</p>
+    <p>Category: {{ listing.category }}</p>
+    <p>Price: &pound;{{ listing.price }}</p>
+    {% if listing.image %}
+        <img src="{{ listing.image.url }}" alt="{{ listing.title }}">
+    {% endif %}
+{% endblock content %}
