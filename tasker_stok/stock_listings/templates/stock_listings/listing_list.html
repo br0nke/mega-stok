@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ block.super }} list{% endblock title %}
+{% block content %}
+<h1>{% trans "listings"|capfirst %}</h1>
+<ul>
+{% for listing in listing_list %}
+    <li>
+        <a href="{% url "listing_detail" listing.pk %}">{{ listing.title }} - {{ listing.category }} - &pound;{{ listing.price }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}

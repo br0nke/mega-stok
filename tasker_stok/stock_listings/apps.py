@@ -2,7 +2,7 @@ from django.apps import AppConfig
 from django.utils.translation import gettext_lazy as _
 
 
-class TasksConfig(AppConfig):
+class StockListingsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tasks'
-    verbose_name = _('tasks')
+    name = 'stock_listings'
+    verbose_name = _('stock listings')
