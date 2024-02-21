@@ -5,7 +5,6 @@
 <div class="toolbar">
     <a class="button" href="{% url "project_create" %}">{% trans "create new"|title %}</a>
     <form method="get" action="{{ request.path }}">
-        <br>
         <select name="owner" onchange="this.form.submit();">
             <option value="">{% trans "filter by owner"|capfirst %}</option>
             {% for user in user_list %}
