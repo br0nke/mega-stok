@@ -3,6 +3,16 @@
 {% block title %}{{ block.super }} list{% endblock title %}
 {% block content %}
 <h1>{% trans "listings"|capfirst %}</h1>
+<div class="toolbar">
+    <form method="get" action="{{ request.path }}">
+        <select name="seller" onchange="this.form.submit();">
+            <option value="">{% trans "filter by seller"|capfirst %}</option>
+            {% for listing in listing_list %}
+                <option value="{{ listing.user }}" {% if listing.user == request.GET.user %}selected{% endif %}>{{ listing.category }} ({{ listing.user }})</option>
+            {% endfor %}
+        </select>
+    </form>
+</div>
 <ul>
 {% for listing in listing_list %}
     <li>
