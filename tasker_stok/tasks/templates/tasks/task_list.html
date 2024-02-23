@@ -2,7 +2,10 @@
 {% load i18n %}
 {% block title %}{{ block.super }} list{% endblock title %}
 {% block content %}
-<h1>{% trans "tasks"|capfirst %}</h1>
+<h1>{% trans "tasks"|capfirst %}</h1><img
+class="rounded-circle article-img"
+src="{{ task.user.profile.picture.url }}"
+/>
 <ul>
 {% for task in task_list %}
     <li>
