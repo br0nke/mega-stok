@@ -2,7 +2,8 @@
 {% block title %}{{ object }} {% trans "at" %} {{ block.super }}{% endblock title %}
 {% block content %}
     <h1>{{ listing.title }}</h1>
-    <p>Seller: {{ listing.user }} Contact: {{ listing.phone }}</p>
+    <p>{% trans "Seller" %}: <a href="{% url "user_detail" listing.user.username %}">{{ listing.user }}</a></p>
+    <p>Contact: {{ listing.phone }}</p>
     <p>Description: {{ listing.description }}</p>
     <p>Category: {{ listing.category }}</p>
     <p>Price: &pound;{{ listing.price }}</p>
