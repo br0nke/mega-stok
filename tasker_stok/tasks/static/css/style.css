@@ -203,3 +203,18 @@ button:hover, .button:hover {
 .toolbar form select {
     padding: 0.4rem;
 }
+
+.profile-image-container {
+    width: 600px; /* Adjust width as needed */
+    position: relative; /* Required for responsive sizing */
+}
+
+.profile-img {
+    object-fit: scale-down; /* Scales image to cover container */
+    border-radius: 50%; /* Maintains circular shape */
+    position: fixed; /* Required for responsive sizing */
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 40%; /* Ensures image fills container */
+}

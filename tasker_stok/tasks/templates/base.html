@@ -1,6 +1,9 @@
 <!DOCTYPE html>{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}{% get_available_languages as LANGUAGES %}
+{% load crispy_forms_tags %}
 <html lang="{{ LANGUAGE_CODE }}">
 <head>
+    <link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap4/js/bootstrap.bundle.min.js' %}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}MEGA-STOK{% endblock title %}</title>
