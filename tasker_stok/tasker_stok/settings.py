@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'tasks',
     'stock_listings',
     'user_profile',
+    'crispy_forms',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'tasks/static/'
 STATIC_ROOT = BASE_DIR.joinpath(STATIC_URL)
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR.joinpath(MEDIA_URL)

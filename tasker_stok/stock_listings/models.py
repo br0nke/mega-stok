@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
+from PIL import Image
 
 
 class StockListing(models.Model):
@@ -28,3 +29,14 @@ class StockListing(models.Model):
 
     def get_absolute_url(self):
         return reverse("listing_detail", kwargs={"pk": self.pk})
+    
+    def save(self):
+        super().save()
+
+        img = Image.open(self.image.path) # Open image
+
+        # resize image
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size) # Resize image
+            img.save(self.image.path) # Save it again and override the larger image

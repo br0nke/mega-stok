@@ -1,17 +1,18 @@
-{% extends "base.html" %}{% load i18n %}
+{% extends "base.html" %}{% load i18n %}{% load crispy_forms_tags %}
 {% block title %}{{ object }} {% trans "at" %} {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>User: {{ object.username }}</h1>
-<div class="content-section">
-    <div class="media">
-      <img
-        src="{{ user.profile.picture.url }}" alt="picture"
-      />
-    </div>
+  <div class="profile-image-container">
+  <img
+    src="{{ user.profile.picture.url }}"
+    alt="'picture here'"
+    class="rounded-circle profile-img"
+    style="width: 600; height: auto;"
+  />
 </div>
-<p>{{ object.first_name }} {{ object.last_name }}</p>
-{% if object == request.user %}
-    <p><a class="button" href="{% url "user_update" %}">{% trans "edit profile data" %}</a></p>
-    <p>{% trans "e-mail"|capfirst %}: {{ object.email }}</p>
-{% endif %}
+  <p>{{ object.first_name }} {{ object.last_name }}</p>
+  <p>{% trans "e-mail"|capfirst %}: {{ object.email }}</p>
+  {% if object == request.user %}
+      <p><a class="button" href="{% url "user_update" %}">{% trans "edit profile data" %}</a></p>
+  {% endif %}
 {% endblock content %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n %} {% load crispy_forms_tags %}
 {% block title %}{{ block.super }} list{% endblock title %}
 {% block content %}
 <h1>{% trans "listings"|capfirst %}</h1>
@@ -8,16 +8,32 @@
         <select name="seller" onchange="this.form.submit();">
             <option value="">{% trans "filter by seller"|capfirst %}</option>
             {% for listing in listing_list %}
-                <option value="{{ listing.user }}" {% if listing.user == request.GET.user %}selected{% endif %}>{{ listing.category }} ({{ listing.user }})</option>
+                <option value="{{ listing.user }}" {% if listing.user == request.GET.listings %}selected{% endif %}>{{ listing.category }} ({{ listing.user }})</option>
             {% endfor %}
         </select>
     </form>
 </div>
-<ul>
-{% for listing in listing_list %}
-    <li>
-        <a href="{% url "listing_detail" listing.pk %}">{{ listing.title }} - {{ listing.category }} - &pound;{{ listing.price }}</a>
-    </li>
-{% endfor %}
-</ul>
+<div class="container">
+    <div class="row">
+      {% for listing in listing_list %}
+        <div class="col-md-4">
+          <a href="{% url "listing_detail" listing.pk %}">
+            <img
+              src="{{ listing.image.url }}"
+              alt="{{ listing.title }}"
+              style="object-fit: cover; width: 300px; height: 300px;"
+            />
+            <div class="content-section">
+              {{ listing.title }} - {{ listing.category }} - &pound;{{ listing.price }}
+            </div>
+          </a>
+          <br>
+        </div>
+  
+        {% if forloop.counter|divisibleby:4 %}
+         <div class="row"></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+</div>            
 {% endblock content %}
